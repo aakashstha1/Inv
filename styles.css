@@ -288,7 +288,7 @@ html::-webkit-scrollbar {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("2.png");
+  background-image: url("./images/2.png");
   background-position: left center;
   background-repeat: no-repeat;
   opacity: 0.5;

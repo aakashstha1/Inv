@@ -155,7 +155,8 @@ function bsStr(ad) {
 }
 // ── Load ──
 window.addEventListener("load", () => {
-  document.getElementById("heroBg").style.backgroundImage = "url('1.png')";
+  document.getElementById("heroBg").style.backgroundImage =
+    "url('./images/1.png')";
   setTimeout(
     () => document.getElementById("heroBg").classList.add("loaded"),
     80,
@@ -180,7 +181,6 @@ window.addEventListener("load", () => {
     () => document.getElementById("scrollHint").classList.add("loaded"),
     1900,
   );
-  
 });
 
 // ── Scroll reveal ──
