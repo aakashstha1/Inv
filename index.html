@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- ▼▼▼ CHANGE: Browser tab title -->
+    <title>Wedding Invitation</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- ════════════════════════════════════════
+     HERO
+     ▼ CHANGE: groom name, bride name,
+               English date, location
+════════════════════════════════════════ -->
+    <section class="hero">
+      <div class="hero-bg" id="heroBg"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content" id="heroContent">
+        <p class="hero-eyebrow" id="heroEyebrow">
+          Together with their families
+        </p>
+
+        <h1 class="hero-names">
+          <!-- ▼ GROOM NAME -->
+          Sabin Shrestha
+          <span class="and">&amp;</span>
+          <!-- ▼ BRIDE NAME -->
+          Ranu Shrestha
+        </h1>
+
+        <div class="hero-divider" id="heroDivider"></div>
+
+        <div class="hero-date-block" id="heroDateBlock">
+          <!-- ▼ English date shown in hero (display only) -->
+          <div class="hero-date-en">
+            Wednesday, 01 July 2026 &nbsp;·&nbsp; Dharan, Nepal
+          </div>
+          <!-- Nepali BS date is auto-calculated from HERO_AD_DATE in JS -->
+          <div class="hero-date-np">२०८३ असार १७</div>
+        </div>
+      </div>
+      <div class="scroll-hint" id="scrollHint">
+        <div class="scroll-line"></div>
+        <svg
+          width="25"
+          height="25"
+          viewBox="0 0 18 18"
+          fill="none"
+          style="animation: bounce 1.8s ease infinite; margin-top: 4px"
+        >
+          <polyline
+            points="2,5 9,13 16,5"
+            stroke="#FFBF00"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+     INTRO
+     ▼ CHANGE: groom full name, bride full name
+════════════════════════════════════════ -->
+    <section class="intro">
+      <div class="inner">
+        <span class="section-label">An Invitation</span>
+        <h2 class="section-title" style="font-style: italic">
+          "Two souls, one heart"
+        </h2>
+        <div class="rule"></div>
+        <p>
+          We joyfully invite you to celebrate the union of
+          <!-- ▼ GROOM FULL NAME -->
+          <strong>Sabin Shrestha</strong>
+          and
+          <!-- ▼ BRIDE FULL NAME -->
+          <strong>Ranu Shrestha</strong>
+          as they begin a beautiful new chapter together. Your presence will
+          make this occasion truly unforgettable.
+        </p>
+        <div class="npt-pill">
+          <div class="npt-clock" id="nptClock"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+     EVENTS
+     ▼ For EACH card change:
+       • English date text in .meta-row
+       • Time text in .meta-row
+       • Venue text in .meta-row
+       • Actual JS Date in EVENTS object below
+════════════════════════════════════════ -->
+    <section class="events">
+      <div class="inner">
+        <span class="section-label">The Celebrations</span>
+        <h2 class="section-title">Events &amp; Schedule</h2>
+        <div class="rule" style="margin: 1.4rem 0"></div>
+        <div class="events-grid">
+          <!-- ── CARD 1: ENGAGEMENT ── -->
+          <div class="event-card" data-delay="0">
+            <div class="badge upcoming" id="badge-1">
+              <span class="bdot"></span><span id="badge-1-text">Upcoming</span>
+            </div>
+            <div class="event-num">01</div>
+            <div class="event-name">Engagement Ceremony</div>
+            <div class="event-meta">
+              <!-- ▼ English date (display) -->
+              <div class="meta-row">
+                <span class="ic">◈</span><span>Wednesday, 24 June 2026</span>
+              </div>
+              <!-- Nepali date auto-fills from JS -->
+              <div class="date-np" id="np-1"></div>
+              <!-- ▼ Time -->
+              <div class="meta-row">
+                <span class="ic">◈</span><span>3:00 PM onwards</span>
+              </div>
+              <!-- ▼ Venue -->
+              <div class="meta-row">
+                <span class="ic">◈</span><span>Bride Home, Biratnagar</span>
+              </div>
+            </div>
+            <div class="cdown" id="cd-1"></div>
+          </div>
+
+          <!-- ── CARD 2: WEDDING ── -->
+          <div class="event-card" data-delay="160">
+            <div class="badge upcoming" id="badge-2">
+              <span class="bdot"></span><span id="badge-2-text">Upcoming</span>
+            </div>
+            <div class="event-num">02</div>
+            <div class="event-name">Wedding Ceremony</div>
+            <div class="event-meta">
+              <!-- ▼ English date (display) -->
+              <div class="meta-row">
+                <span class="ic">◈</span><span>Wdenesday, 01 July 2026</span>
+              </div>
+              <div class="date-np" id="np-2"></div>
+              <!-- ▼ Time -->
+              <div class="meta-row">
+                <span class="ic">◈</span><span>10:00 AM Onward</span>
+              </div>
+              <!-- ▼ Venue -->
+              <div class="meta-row">
+                <span class="ic">◈</span><span>Bride Home, Biratnagar</span>
+              </div>
+            </div>
+            <div class="cdown" id="cd-2"></div>
+          </div>
+
+          <!-- ── CARD 3: RECEPTION ── -->
+          <div class="event-card" data-delay="320">
+            <div class="badge upcoming" id="badge-3">
+              <span class="bdot"></span><span id="badge-3-text">Upcoming</span>
+            </div>
+            <div class="event-num">03</div>
+            <div class="event-name">Reception</div>
+            <div class="event-meta">
+              <!-- ▼ English date (display) -->
+              <div class="meta-row">
+                <span class="ic">◈</span><span>Thrusday, 02 July 2026</span>
+              </div>
+              <div class="date-np" id="np-3"></div>
+              <!-- ▼ Time -->
+              <div class="meta-row">
+                <span class="ic">◈</span><span>1:00 PM onwards</span>
+              </div>
+              <!-- ▼ Venue -->
+              <div class="meta-row">
+                <span class="ic">◈</span><span>Newa Bhawan, Dharan</span>
+              </div>
+            </div>
+            <div class="cdown" id="cd-3"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+     FOOTER
+     ▼ CHANGE: names, BS year/month, English month/year
+════════════════════════════════════════ -->
+    <footer>
+      <!-- ▼ Groom & Bride names + BS date + English date -->
+
+      <p>Made with love ♡</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
