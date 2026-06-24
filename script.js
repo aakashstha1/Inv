@@ -18,7 +18,7 @@ const EVENTS = [
     cdId: "cd-1",
     badgeId: "badge-1",
     npId: "np-1",
-    start: new Date(Date.UTC(2026, 5, 24, 9, 15)), // 24 Jun 2026, 3:00 PM NPT
+    start: new Date(Date.UTC(2026, 5, 24, 5, 15)), // 24 Jun 2026, 3:00 PM NPT
     adDate: new Date(Date.UTC(2026, 5, 24)),
   },
   {
